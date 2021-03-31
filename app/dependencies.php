@@ -33,5 +33,7 @@ return function (ContainerBuilder $containerBuilder) {
         return $renderer;
     };
 
+    $container['ToDoModel'] = DI\Factory('App\Factories\ToDoModelFactory');
+
     $containerBuilder->addDefinitions($container);
 };

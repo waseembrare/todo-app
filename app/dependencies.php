@@ -32,6 +32,11 @@ return function (ContainerBuilder $containerBuilder) {
         $renderer = new PhpRenderer($settings['template_path']);
         return $renderer;
     };
+    $container['PDO'] = function () {
+        $db = new PDO('mysql:host=127.0.0.1; dbname=tweet-app','root','password');
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        return $db;
+    };
 
     $container['ToDoModel'] = DI\Factory('App\Factories\ToDoModelFactory');
 

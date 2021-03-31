@@ -38,7 +38,7 @@ return function (ContainerBuilder $containerBuilder) {
         return $db;
     };
 
-    $container['ToDoModel'] = DI\Factory('App\Factories\ToDoModelFactory');
+    $container['ToDoPageModel'] = DI\Factory('App\Factories\ToDoModelFactory');
 
     $containerBuilder->addDefinitions($container);
 };

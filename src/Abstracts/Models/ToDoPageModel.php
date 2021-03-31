@@ -4,7 +4,7 @@
 namespace App\Abstracts\Models;
 
 
-class ToDoModel
+class ToDoPageModel
 {
     protected $db;
 

@@ -7,9 +7,19 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 return function (App $app) {
     $container = $app->getContainer();
 
+    // the function gets replaced by DI key
     $app->get('/', function ($request, $response, $args) use ($container) {
         $renderer = $container->get('renderer');
-        return $renderer->render($response, "toDoPage.php", $args);
+        return $renderer->render($response, "index.php", $args);
     });
+
+    // SHOULD THESE ALL BE POINTING TO /to_do???
+    $app->get('/todo', 'ToDoPageController');
+
+    $app->get('/create', 'CreateTaskController');
+
+    $app->get('/delete', 'DeleteTaskController');
+
+    $app->get('/completed', 'MarkTaskCompletedController');
 
 };

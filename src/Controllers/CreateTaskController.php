@@ -1,13 +1,14 @@
 <?php
 
 
-namespace App\Abstracts\Controllers;
+namespace App\Controllers;
 
 
+use App\Abstracts\Controller;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class ToDoPageController
+class CreateTaskController extends Controller
 {
     protected $renderer;
     protected $toDoPageModel;
@@ -20,8 +21,10 @@ class ToDoPageController
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        $allToDos = $this->toDoPageModel->getAllUsers();
-        $data = ['allToDos' => $allToDos];
+        // below is the $args
+
+        $toDos = $this->toDoPageModel->getAllTasks();
+        $data = ['toDos' => $toDos];
         return $this->renderer->render($response, "toDoPage.php", $data);
     }
 }

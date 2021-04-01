@@ -1,0 +1,16 @@
+/* colours */
+:root{
+  /*--primary: #6200EE;*/
+  /*--secondary: #3700B3;*/
+  /*--title: #03DAC5;*/
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* layout styles */
+{
+  /*background: var(--primary);*/
+  /*border-bottom: 10px solid var(--secondary);*/
+}

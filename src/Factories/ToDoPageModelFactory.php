@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Abstracts\Factories;
+namespace App\Factories;
 
 
-use App\Abstracts\Models\ToDoPageModel;
+use App\Models\ToDoPageModel;
 use Psr\Container\ContainerInterface;
 
 class ToDoPageModelFactory

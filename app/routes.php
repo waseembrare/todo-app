@@ -16,10 +16,9 @@ return function (App $app) {
     // SHOULD THESE ALL BE POINTING TO /to_do???
     $app->get('/todo', 'ToDoPageController');
 
-    $app->get('/create', 'CreateTaskController');
+    $app->post('/create', 'CreateTaskController');
 
-    $app->get('/delete', 'DeleteTaskController');
+    $app->get('/deleted/{id}', 'DeleteTaskController');
 
-    $app->get('/completed', 'MarkTaskCompletedController');
-
+    $app->get('/completed/{id}', 'MarkTaskCompletedController');
 };

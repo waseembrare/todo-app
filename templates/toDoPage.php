@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
     <title>ToDo App</title>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-    <script src="../public/ui.js" defer></script>
+<!--    <script src="../public/ui.js" defer></script>-->
 <!--    <link rel="stylesheet" type="text/css" href="../public/materialize.min.css">-->
 <!--    <link rel="stylesheet" type="text/css" href="../public/styles.css">-->
 <!--    <script src="../public/materialize.min.js" defer></script>-->
@@ -33,15 +33,17 @@
 <body>
 <h1>ToDos</h1>
 <div>
-    <form action="post">
+<!--    <form action ="--><?php //echo base_url() . '/'?><!--" method="post">-->
+
     <div>
         <?php foreach($toDos as $toDo) {
-            echo '<div id="' . $toDo['id'] . '">' . '<input type="checkbox" /> ' . $toDo['task_desc'] . ' <button class="btn waves-effect waves-light" type="submit" name="delete">delete</button>' . '</div>';
+            echo '<div id="' . $toDo['id'] . '">' . '<a href="/completed/'. $toDo['id'] . '">complete</a> ' . $toDo['task_desc'] . ' <a href="/deleted/'. $toDo['id'] . '">delete</a>' . '</div>';
         }
         ?>
     </div>
-        <input type="text">
-        <input type="submit" value="create ToDo">
+    <form method="post" action ="/create">
+        <input type="text" name="task-text">
+        <input type="submit" value="create task">
     </form>
 </div>
 </body>

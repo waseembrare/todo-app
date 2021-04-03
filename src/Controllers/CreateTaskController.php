@@ -21,10 +21,9 @@ class CreateTaskController extends Controller
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        // below is the $args
-
-        $toDos = $this->toDoPageModel->getAllTasks();
-        $data = ['toDos' => $toDos];
-        return $this->renderer->render($response, "toDoPage.php", $data);
+        $postData = $request->getParsedBody();
+        $this->toDoPageModel->createNewTask($postData['task-text']);
+//        var_dump($postData['task-text']);
+        return $response->withHeader('Location', './todo');
     }
 }

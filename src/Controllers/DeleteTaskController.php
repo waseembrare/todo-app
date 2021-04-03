@@ -21,10 +21,8 @@ class DeleteTaskController extends Controller
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        // below is the $args
-
-        $toDos = $this->toDoPageModel->getAllTasks();
-        $data = ['toDos' => $toDos];
-        return $this->renderer->render($response, "toDoPage.php", $data);
+        $id = $args['id'];
+        $this->toDoPageModel->deleteTask($id);
+        return $response->withHeader('Location', '/todo');
     }
 }

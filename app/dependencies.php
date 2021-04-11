@@ -33,5 +33,18 @@ return function (ContainerBuilder $containerBuilder) {
         return $renderer;
     };
 
+    $container['PDO'] = function () {
+        $db = new PDO('mysql:host=127.0.0.1; dbname=todo-app','root','password');
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        return $db;
+    };
+
+    $container['ToDoPageModel'] = DI\Factory('App\Factories\ToDoPageModelFactory');
+    $container['ToDoPageController'] = DI\Factory('App\Factories\ToDoPageControllerFactory');
+    $container['CreateTaskController'] = DI\Factory('App\Factories\CreateTaskControllerFactory');
+    $container['DeleteTaskController'] = DI\Factory('App\Factories\DeleteTaskControllerFactory');
+    $container['MarkTaskCompletedController'] = DI\Factory('App\Factories\MarkTaskCompletedControllerFactory');
+    $container['UndoMarkTaskCompletedController'] = DI\Factory('App\Factories\UndoMarkTaskCompletedControllerFactory');
+
     $containerBuilder->addDefinitions($container);
 };

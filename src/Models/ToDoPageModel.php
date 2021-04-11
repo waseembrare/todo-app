@@ -39,6 +39,8 @@ class ToDoPageModel
         return $query->execute($id);
     }
 
+//    TODO - ADD FUNCTIONALITY FOR EDIT TASK FUNCTION
+
 //    public function editTask($id)
 //    {
 //        $query = $this->db->prepare('UPDATE `tasks`

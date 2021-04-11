@@ -1,49 +1,25 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ToDo App</title>
-    <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-<!--    <script src="../public/ui.js" defer></script>-->
-<!--    <link rel="stylesheet" type="text/css" href="../public/materialize.min.css">-->
-<!--    <link rel="stylesheet" type="text/css" href="../public/styles.css">-->
-<!--    <script src="../public/materialize.min.js" defer></script>-->
-    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>-->
-    <style>
-        body {
-            margin: 50px 0 0 0;
-            padding: 0;
-            width: 100%;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            text-align: center;
-            color: #aaa;
-            font-size: 18px;
-        }
-
-        h1 {
-            color: #719e40;
-            letter-spacing: -3px;
-            font-family: 'Lato', sans-serif;
-            font-size: 100px;
-            font-weight: 200;
-            margin-bottom: 0;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
-<h1>ToDos</h1>
+<h1 class="header">DoMore</h1>
 <div>
-<!--    <form action ="--><?php //echo base_url() . '/'?><!--" method="post">-->
-
     <div>
-        <?php foreach($toDos as $toDo) {
-            echo '<div id="' . $toDo['id'] . '">' . '<a href="/completed/'. $toDo['id'] . '">complete</a> ' . $toDo['task_desc'] . ' <a href="/deleted/'. $toDo['id'] . '">delete</a>' . '</div>';
-        }
-        ?>
+        <?php \App\ViewHelpers\ToDoPageViewHelper::DisplayTasks($toDos); ?>
     </div>
     <form method="post" action ="/create">
-        <input type="text" name="task-text">
-        <input type="submit" value="create task">
+        <div class="create-task-container">
+            <input id="task-text" type="text" name="task-text" placeholder="DoWhat...">
+            <input id="create-task-button" type="submit" value="create task">
+        </div>
     </form>
 </div>
 </body>

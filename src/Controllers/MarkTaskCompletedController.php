@@ -23,6 +23,6 @@ class MarkTaskCompletedController extends Controller
     {
         $id = $args['id'];
         $this->toDoPageModel->markTaskCompleted($id);
-        return $response->withHeader('Location', '/todo');
+        return $response->withHeader('Location', '/');
     }
 }

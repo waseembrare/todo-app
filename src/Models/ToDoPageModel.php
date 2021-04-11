@@ -24,23 +24,45 @@ class ToDoPageModel
 
     public function createNewTask($newTask)
     {
-        $query = $this->db->prepare('INSERT INTO `tasks` (`task_desc`) VALUES (:task)');
+        $query = $this->db->prepare('INSERT INTO `tasks` (`task_desc`) 
+                                            VALUES (:task)');
         $newTask = ['task' => $newTask];
         return $query->execute($newTask);
     }
 
     public function deleteTask($id)
     {
-        $query = $this->db->prepare('UPDATE `tasks` SET `deleted` = 1 WHERE `id` = :id;');
+        $query = $this->db->prepare('UPDATE `tasks` 
+                                            SET `deleted` = 1 
+                                            WHERE `id` = :id;');
         $id = ['id' => $id];
         return $query->execute($id);
     }
+
+//    public function editTask($id)
+//    {
+//        $query = $this->db->prepare('UPDATE `tasks`
+//                                            SET `task_desc` = :editedTask
+//                                            WHERE `id` = :id;');
+//        $id = ['id' => $id];
+//        return $query->execute($id);
+//    }
 
     public function markTaskCompleted($id)
     {
-        $query = $this->db->prepare('UPDATE `tasks` SET `completed` = 1 WHERE `id` = :id;');
+        $query = $this->db->prepare('UPDATE `tasks` 
+                                            SET `completed` = 1 
+                                            WHERE `id` = :id;');
         $id = ['id' => $id];
         return $query->execute($id);
     }
 
+    public function undoMarkTaskCompleted($id)
+    {
+        $query = $this->db->prepare('UPDATE `tasks` 
+                                            SET `completed` = null 
+                                            WHERE `id` = :id;');
+        $id = ['id' => $id];
+        return $query->execute($id);
+    }
 }

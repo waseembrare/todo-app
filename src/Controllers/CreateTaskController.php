@@ -23,7 +23,6 @@ class CreateTaskController extends Controller
     {
         $postData = $request->getParsedBody();
         $this->toDoPageModel->createNewTask($postData['task-text']);
-//        var_dump($postData['task-text']);
-        return $response->withHeader('Location', './todo');
+        return $response->withHeader('Location', '/');
     }
 }

@@ -23,6 +23,6 @@ class DeleteTaskController extends Controller
     {
         $id = $args['id'];
         $this->toDoPageModel->deleteTask($id);
-        return $response->withHeader('Location', '/todo');
+        return $response->withHeader('Location', '/');
     }
 }

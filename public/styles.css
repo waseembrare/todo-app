@@ -1,16 +1,92 @@
-/* colours */
-:root{
-  /*--primary: #6200EE;*/
-  /*--secondary: #3700B3;*/
-  /*--title: #03DAC5;*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
 }
 
 body {
-  font-family: sans-serif;
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }
 
-/* layout styles */
-{
-  /*background: var(--primary);*/
-  /*border-bottom: 10px solid var(--secondary);*/
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ff4f30;
 }
+
+a {
+    text-decoration: none;
+    color: #ff4f30;
+}
+
+p {
+    margin: 0 20px;
+}
+
+.accent {
+    color: #208799;
+}
+
+.todo-item-row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    justify-content: center;
+    padding: 5px 0;
+    margin: 0 auto;
+}
+
+.completed {
+    text-decoration: line-through;
+    text-decoration-color: #ff4f30;
+}
+
+.create-task-container {
+    margin: 0 10vw;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#task-text {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#create-task-button {
+    background-color: #208799;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 2.6rem;
+}
+
+#create-task-button:hover {
+    background-color: #206772;
+}
+
+input[type=text] {
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    text-align: center;
+}
+
+input[type=text]:focus {
+    outline-color: #208799;
+}
+
+
+
+

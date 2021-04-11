@@ -1,10 +1,12 @@
-# Slim Framework 4 Skeleton Application
+# DoMore ToDo List Application
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 4 application. This application uses the latest Slim 4 with Slim PSR-7 implementation and PHP-DI container implementation along with the PHP-View template renderer. It also uses the Monolog logger.
+A todo app built using the Slim framework. 
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+Using a minimalistic UI so the user can focus on the tasks at hand, DoMore allows users to create, delete and mark tasks as completed or uncompleted. 
 
-## Install the Application
+## To Setup Project Locally...
+
+### Install the Application
 
 Create a new directory with your project name, e.g:
 
